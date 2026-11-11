@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FPGA tick-to-trade lab</title>
+<meta name="description" content="Try what an FPGA engineer at a trading firm does: step a tick-to-trade pipeline clock by clock, meet timing, and race for a stale quote. No board, no install.">
+<link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+<div class="app" id="app" data-kind="sim">
+  <header class="bar">
+    <span class="brand">fpga-lab</span>
+    <span class="tag">tick-to-trade, one clock at a time</span>
+    <span class="spacer"></span>
+    <span class="keys"><kbd>space</kbd> step <kbd>r</kbd> run <kbd>←</kbd><kbd>→</kbd> scrub <kbd>1</kbd>–<kbd>6</kbd> lesson</span>
+  </header>
+  <main class="main">
+    <section class="viewport" aria-label="Simulation">
+      <div id="stage" class="stage"></div>
+      <div id="strip" class="strip" aria-label="Blocks in the design"></div>
+      <div class="lower">
+        <div id="code" class="pane code" aria-label="Verilog"></div>
+        <div id="values" class="pane values" aria-live="off"></div>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+    <aside class="panel" aria-label="Lesson">
+      <div class="pick">
+        <label for="lesson">lesson</label>
+        <select id="lesson"></select>
+        <button id="prev" class="btn" type="button" aria-label="Previous lesson">◀</button>
+        <button id="next" class="btn" type="button" aria-label="Next lesson">▶</button>
+      </div>
+      <h1 id="title"></h1>
+      <section><h2>about this lesson</h2><div id="about" class="prose"></div></section>
+      <section><h2>controls</h2><div id="controls" class="controls"></div></section>
+      <section><h2>try this</h2><ol id="try" class="prose"></ol></section>
+      <section><h2>what is simplified</h2><div id="simplified" class="prose quiet"></div></section>
+    </aside>
+  </main>
+</div>
+<noscript><p style="padding:16px">This lab needs JavaScript.</p></noscript>
+<script src="js/sim.js"></script>
+<script src="js/feed.js"></script>
+<script src="js/modules.js"></script>
+<script src="js/verilog.js"></script>
+<script src="js/wave.js"></script>
+<script src="js/timing.js"></script>
+<script src="js/race.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/lessons/pipeline.js"></script>
+<script src="js/lessons/00_clock.js"></script>
+<script src="js/lessons/01_parse.js"></script>
+<script src="js/lessons/02_book.js"></script>
+<script src="js/lessons/03_trigger.js"></script>
+<script src="js/lessons/04_timing.js"></script>
+<script src="js/lessons/05_race.js"></script>
+</body>
+</html>
